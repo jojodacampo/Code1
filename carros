@@ -23,3 +23,16 @@ with open(arquivo_csv, mode="w", newline="") as arquivo:
         escritor_csv.writerow(carro)
 
 print(f"Arquivo '{arquivo_csv}' criado com sucesso!")
+
+try:
+    df = pd.read_csv(arquivo_csv, encoding='utf-8')
+except UnicodeDecodeError:
+    df = pd.read_csv(arquivo_csv, encoding='latin1')
+
+mediap = df["potencia"].mean()
+
+df.loc[len(df)] = ["Média", "", f"{mediap:.2f}", ""]
+
+df.to_csv(arquivo_csv, index=False, encoding='utf-8') 
+print("Média de potencia adicionada ao arquivo CSV com sucesso!")
+
