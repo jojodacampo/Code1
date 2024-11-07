@@ -1,0 +1,25 @@
+import csv
+import pandas as pd
+
+
+carros = [
+    {"marca": "Jaguar", "velocidade final": 250, "potencia": 300, "categoria": "coupe"},
+    {"marca": "Ford", "velocidade final": 300, "potencia": 490, "categoria": "coupe"},
+    {"marca": "Ferrari", "velocidade final": 330, "potencia": 1000, "categoria": "super esportivo"},
+    {"marca": "Lamborghini", "velocidade final": 332, "potencia": 780, "categoria": "esportivo"},
+]
+
+arquivo_csv = "carros.csv"
+
+
+with open(arquivo_csv, mode="w", newline="") as arquivo:
+    escritor_csv = csv.DictWriter(arquivo, fieldnames=["marca", "velocidade final", "potencia", "categoria"])
+    
+    
+    escritor_csv.writeheader()
+    
+    
+    for carro in carros:
+        escritor_csv.writerow(carro)
+
+print(f"Arquivo '{arquivo_csv}' criado com sucesso!")
