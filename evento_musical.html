@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Músical</title>
+</head>
+
+<body>
+    
+       <img src="The Town.png" alt="Imagem Centralizada" widht="200" height="100" style="display: block; margin: auto;">
+       <br>
+       <a><iframe width="300" height="200" src="https://www.youtube.com/embed/YZ3rEoWj6YA?si=zxMnDXwsRjqxzAuI" style="display: block; margin: auto;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" alt="Imagem Centralizada referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></a>
+       <style>
+        audio {
+            width: 300px;
+            background-color: #000000c2; 
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+        <audio controls style="position: fixed; bottom: 10px; right: 10px;">
+        <source src="The Town.mp3" type="audio/mpeg" alt="Audio Centralizada" style="display: block; margin: auto;">
+      </audio>
+   <style>
+        body {background-color: rgb(146, 144, 144);}
+        </style>
+    <br>
+    <div>
+     <form>
+        <input type="text" placeholder="Nome" required> <!--Placerholder é utilizado em inputs de formulários para exibir um texto temporário-->
+        <input type="email" placeholder="E-mail" required> <!--Required é utilizado em campos de formulário para tornar o preenchimento-->
+        <input type="tel" placeholder="Telefone" required>
+
+        <label><input type="radio" name="ingresso" value="Pista"> Pista</label>
+        <label><input type="radio" name="ingresso" value="VIP"> VIP</label>
+        <label><input type="radio" name="ingresso" value="Camarote"> Camarote</label>
+
+        <label><input type="checkbox"> Receber atualizações</label>
+
+        <button type="submit">Enviar</button>
+     </form>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #090909;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Programação do Evento</h2>
+
+    <table>
+        <tr>
+            <th>Horário</th>
+            <th>Atração</th>
+            <th>Palco</th>
+        </tr>
+        <tr>
+            <td>14:00 - 15:00</td>
+            <td>Banda Rock Show</td>
+            <td>Palco Principal</td>
+        </tr>
+        <tr>
+            <td>15:30 - 16:30</td>
+            <td>DJ Eletrônico</td>
+            <td>Palco Sunset</td>
+        </tr>
+        <tr>
+            <td>17:00 - 18:00</td>
+            <td>Apresentação de Dança</td>
+            <td>Palco Alternativo</td>
+        </tr>
+        <tr>
+            <td>19:00 - 20:30</td>
+            <td>Show do The Weeknd</td>
+            <td>Palco Principal</td>
+        </tr>
+        <tr>
+            <td>21:00 - 23:00</td>
+            <td>Banda Headliner</td>
+            <td>Palco Cultural</td>
+        </tr>
+    </table>
+    </div>
+</body>
+
+</html>
