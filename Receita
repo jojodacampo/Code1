@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Receitas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset de estilos para garantir consistência entre navegadores */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1511690078903-7a2c5c726011?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* Contêiner principal da galeria */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            background: rgb(214, 77, 251);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        /* Estilização dos cartões */
+        .card {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .card p {
+            font-size: 0.9em;
+            font-weight: normal;
+            color: #555;
+            margin-top: 10px;
+        }
+        
+      
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+      
+        .card::before {
+            content: '\2728'; 
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.2em;
+        }
+        
+        
+        .card::after {
+            content: '\1F35E'; 
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="card">
+            <img src="paodequejio.jpeg" alt="Pão de Queijo">
+            <h3>Pão de Queijo</h3>
+            <p>Ingredientes: Polvilho azedo, leite, ovos, queijo minas, óleo e sal.</p>
+        </div>
+        <div class="card">
+            <img src="bolodecenoura.webp" alt="Bolo de Cenoura">
+            <h3>Bolo de Cenoura</h3>
+            <p>Ingredientes: Cenoura, ovos, óleo, açúcar, farinha de trigo e fermento.</p>
+        </div>
+        <div class="card">
+            <img src="tortadelimao.jpeg" alt="Torta de Limão">
+            <h3>Torta de Limão</h3>
+            <p>Ingredientes: Biscoito triturado, manteiga, leite condensado, limão e creme de leite.</p>
+        </div>
+        <div class="card">
+            <img src="macarraocarbonara.jpeg" alt="Macarrão Carbonara">
+            <h3>Macarrão Carbonara</h3>
+            <p>Ingredientes: Espaguete, bacon, ovos, queijo parmesão e pimenta-do-reino.</p>
+        </div>
+        <div class="card">
+            <img src="images.jpeg" alt="Sopa de Abóbora">
+            <h3>Sopa de Abóbora</h3>
+            <p>Ingredientes: Abóbora, cebola, alho, caldo de legumes e creme de leite.</p>
+        </div>
+        <div class="card">
+            <img src="saladagrega.jpeg" alt="Salada Grega">
+            <h3>Salada Grega</h3>
+            <p>Ingredientes: Tomate, pepino, cebola roxa, queijo feta e azeitonas.</p>
+        </div>
+    </div>
+</body>
+</html>
