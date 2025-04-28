@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Compras</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f5af19, #f12711);
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+
+    .store-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #f12711;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 10px;
+      background-color: #f12711;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #c90d0d;
+    }
+
+    .cart, .balance, .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #f7f7f7;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="store-container">
+    <h2>🛒 Loja Online</h2>
+    <div class="products">
+      <button onclick="addToCart('Camiseta', 50)">Camiseta - R$50</button>
+      <button onclick="addToCart('Calça', 80)">Calça - R$80</button>
+      <button onclick="addToCart('Tênis', 120)">Tênis - R$120</button>
+      <button onclick="addToCart('Boné', 30)">Boné - R$30</button>
+    </div>
+
+    <div class="cart">
+      <h3>Carrinho:</h3>
+      <ul id="cartItems"></ul>
+    </div>
+
+    <button onclick="finalizePurchase()">Finalizar Compra</button>
+
+    <div class="balance" id="balance">💰 Saldo: R$200,00</div>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    let saldo = 200.00;
+    let carrinho = [];
+
+    function addToCart(produto, preco) {
+      carrinho.push({ nome: produto, preco: preco });
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItems = document.getElementById('cartItems');
+      cartItems.innerHTML = '';
+
+      carrinho.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nome} - R$${item.preco.toFixed(2)}`;
+        cartItems.appendChild(li);
+      });
+    }
+
+    function finalizePurchase() {
+      let total = 0;
+    
+      for (let i = 0; i < carrinho.length; i++) {
+        total += carrinho[i].preco;
+      }
+
+      const result = document.getElementById('result');
+   
+      total > saldo 
+        ? (result.textContent = "Saldo insuficiente!") 
+        : (result.textContent = "Compra realizada com sucesso!", saldo -= total);
+
+
+      document.getElementById('balance').textContent = `💰 Saldo: R$${saldo.toFixed(2)}`;
+
+      if (total <= saldo) {
+        carrinho = [];
+        renderCart();
+      }
+    }
+  </script>
+
+</body>
+</html>
