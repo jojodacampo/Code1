@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil do Usuário</title>
+  <style>
+    body{
+        background: linear-gradient(135deg, red, purple);
+
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    #likeButton {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 16px;
+    }
+
+    #likeButton.hovered {
+      background-color: #2980b9;
+    }
+
+    #username {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 80%;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    #greeting, #likeCount {
+      margin-top: 15px;
+      font-size: 1.2em;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Perfil do Usuário</h2>
+    
+    <input type="text" id="username" placeholder="Digite seu nome" />
+
+    <br><br>
+
+    <button id="likeButton">Curtir ❤️</button>
+
+    <p id="greeting">Olá!</p>
+    <p>Total de curtidas: <span id="likeCount">0</span></p>
+  </div>
+
+  <script>
+    const usernameInput = document.getElementById('username');
+    const likeButton = document.getElementById('likeButton');
+    const greeting = document.getElementById('greeting');
+    const likeCount = document.getElementById('likeCount');
+
+    let count = 0;
+    let username = "";
+
+    // Evento: tecla pressionada (log no console)
+    usernameInput.addEventListener('keydown', (event) => {
+      console.log(`Tecla pressionada: ${event.key}`);
+    });
+
+    // Evento: ao digitar (atualiza o nome)
+    usernameInput.addEventListener('input', (event) => {
+      username = event.target.value;
+    });
+
+    // Evento: clique no botão de curtir
+    likeButton.addEventListener('click', () => {
+      count++;
+      likeCount.innerText = count;
+      const nameToGreet = username.trim() !== "" ? username : "usuário";
+      greeting.innerText = `Olá, ${nameToGreet}! Você curtiu ${count}x.`;
+    });
+
+    // Evento: mouse sobre o botão
+    likeButton.addEventListener('mouseover', () => {
+      likeButton.classList.add('hovered');
+    });
+
+    likeButton.addEventListener('mouseout', () => {
+      likeButton.classList.remove('hovered');
+    });
+  </script>
+
+</body>
+</html>
