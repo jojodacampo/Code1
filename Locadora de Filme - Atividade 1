@@ -1,0 +1,43 @@
+class Filme {
+    String titulo;
+    String genero;
+
+
+    public Filme(String titulo, String genero) {
+        this.titulo = titulo;
+        this.genero = genero;
+    }
+
+
+    public void exibirFilme() {
+        System.out.println("Filme: " + titulo + " | Gênero: " + genero);
+    }
+}
+
+
+class Cliente{
+    String nome;
+    String cpf;
+
+
+    public Cliente(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+    public void exibirCliente(){
+        System.err.println("Cliente: " + nome + "| CPF: "+ cpf);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Filme filme = new Filme("Vingadores", "Ação");
+        Cliente cliente = new Cliente("Johann Matheus", "085.722.729-76");
+
+
+        filme.exibirFilme();
+        cliente.exibirCliente();
+    }
+}
+
