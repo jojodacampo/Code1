@@ -1,0 +1,53 @@
+class Aluno {
+    String nome;
+    int idade;
+
+    public Aluno(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    public void exibirInfo() {
+        System.out.println("Aluno: " + nome + ", Idade: " + idade);
+    }
+}
+
+class Exercicio {
+    String nome;
+    String grupoMuscular;
+
+    public Exercicio(String nome, String grupoMuscular) {
+        this.nome = nome;
+        this.grupoMuscular = grupoMuscular;
+    }
+
+    public void mostrarExercicio() {
+        System.out.println("Exercicio: " + nome + ", Grupo: " + grupoMuscular);
+    }
+}
+
+// Classe Treino
+class Treino {
+    String tipo;
+    int duracaoMinutos;
+
+    public Treino(String tipo, int duracaoMinutos) {
+        this.tipo = tipo;
+        this.duracaoMinutos = duracaoMinutos;
+    }
+
+    public void mostrarTreino() {
+        System.out.println("Treino: " + tipo + ", Duracao: " + duracaoMinutos + " min");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Aluno aluno = new Aluno("Lucas", 25);
+        Exercicio exercicio = new Exercicio("Supino", "Peito");
+        Treino treino = new Treino("Hipertrofia", 60);
+
+        aluno.exibirInfo();
+        exercicio.mostrarExercicio();
+        treino.mostrarTreino();
+    }
+}
